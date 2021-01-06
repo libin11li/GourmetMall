@@ -8,6 +8,7 @@ import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,9 +25,9 @@ public class UmsMemberController {
 
     private final IUmsMemberService umsMemberService;
 
-    @GetMapping
-    public Result<UmsMemberInfoResponse> getUmsMember(SearchUmsMemberRequest request){
-        return Result.<UmsMemberInfoResponse>builder().success().data(new UmsMemberInfoResponse()).build();
+    @GetMapping("/{id}")
+    public Result<UmsMemberInfoResponse> getUmsMemberDetail(@PathVariable("id") Long id){
+        return umsMemberService.detail(id);
     }
 
 }

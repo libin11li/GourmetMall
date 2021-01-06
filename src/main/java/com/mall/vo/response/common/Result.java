@@ -1,6 +1,6 @@
 package com.mall.vo.response.common;
 
-import com.mall.enums.ResultStatus;
+import com.mall.enums.common.ResultStatus;
 import lombok.Data;
 
 /**
