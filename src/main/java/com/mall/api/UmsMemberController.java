@@ -1,5 +1,7 @@
 package com.mall.api;
 
+import com.mall.service.IUmsMemberService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,5 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
+@Api(value = "UmsMemberController", tags = {"用户管理"})
 public class UmsMemberController {
+
+    private final IUmsMemberService umsMemberService;
+
+    public
+
 }
