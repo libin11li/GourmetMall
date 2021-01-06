@@ -16,12 +16,12 @@ public enum ResultStatus {
     /**
      * 业务code
      */
-    private String code;
+    private final String code;
 
     /**
      * 业务code对应的信息
      */
-    private String msg;
+    private final String msg;
 
     ResultStatus(String code, String msg){
         this.code = code;
