@@ -1,8 +1,10 @@
 package com.mall.service.ums.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mall.entity.ums.UmsMember;
 import com.mall.mapper.ums.UmsMemberMapper;
 import com.mall.service.ums.IUmsMemberService;
+import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +28,10 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
         UmsMemberInfoResponse umsMemberInfoResponse = new UmsMemberInfoResponse();
         BeanUtils.copyProperties(umsMember, umsMemberInfoResponse);
         return Result.<UmsMemberInfoResponse>builder().success().data(umsMemberInfoResponse).build();
+    }
+
+    @Override
+    public Result<UmsMemberInfoResponse> getUmsMemberList(SearchUmsMemberRequest request) {
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.mall.service.ums;
 
+import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 
@@ -16,5 +17,12 @@ public interface IUmsMemberService {
      * @return 用户信息
      */
     Result<UmsMemberInfoResponse> detail(Long id);
+
+    /**
+     * 搜索用户列表
+     * @param request 搜索条件
+     * @return 用户列表
+     */
+    Result<UmsMemberInfoResponse> getUmsMemberList(SearchUmsMemberRequest request);
 
 }

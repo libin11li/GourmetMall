@@ -30,4 +30,9 @@ public class UmsMemberController {
         return umsMemberService.detail(id);
     }
 
+    @GetMapping
+    public Result<UmsMemberInfoResponse> getUmsMemberList(SearchUmsMemberRequest request){
+        return umsMemberService.getUmsMemberList(request);
+    }
+
 }
