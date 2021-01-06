@@ -1,6 +1,6 @@
-package com.mall.service.impl;
+package com.mall.service.ums.impl;
 
-import com.mall.service.IUmsMemberService;
+import com.mall.service.ums.IUmsMemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

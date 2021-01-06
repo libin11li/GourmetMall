@@ -1,4 +1,4 @@
-package com.mall.entity;
+package com.mall.entity.ums;
 
 import lombok.Data;
 

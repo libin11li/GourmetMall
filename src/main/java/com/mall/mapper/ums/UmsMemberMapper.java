@@ -1,7 +1,7 @@
-package com.mall.mapper;
+package com.mall.mapper.ums;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mall.entity.UmsMember;
+import com.mall.entity.ums.UmsMember;
 
 /**
  * @author: li
