@@ -31,7 +31,7 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
     }
 
     @Override
-    public Result<UmsMemberInfoResponse> getUmsMemberList(SearchUmsMemberRequest request) {
+    public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request) {
         return null;
     }
 }

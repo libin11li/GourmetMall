@@ -1,4 +1,4 @@
-package com.mall.config.swagger;
+package com.mall.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
