@@ -1,5 +1,6 @@
 package com.mall.api.ums;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.service.ums.IUmsMemberService;
 import com.mall.vo.request.ums.SearchUmsMemberRequest;
@@ -31,7 +32,8 @@ public class UmsMemberController {
     }
 
     @GetMapping
-    public Result<UmsMemberInfoResponse> getUmsMemberList(SearchUmsMemberRequest request){
+    public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request){
+        Page<UmsMemberInfoResponse> page = new Page<>(request.getPageNum(), request.getPageSize());
         return umsMemberService.getUmsMemberList(request);
     }
 

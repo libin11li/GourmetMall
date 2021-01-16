@@ -1,4 +1,4 @@
-package com.mall.config.exception;
+package com.mall.config;
 
 import com.mall.exception.NormalException;
 import com.mall.vo.response.common.Result;
