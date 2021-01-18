@@ -3,15 +3,17 @@ package com.mall.api.ums;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.service.ums.IUmsMemberService;
+import com.mall.vo.request.ums.AddUmsMemberRequest;
 import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author li
@@ -34,6 +36,17 @@ public class UmsMemberController {
     @GetMapping
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request){
         return umsMemberService.getUmsMemberList(request);
+    }
+
+    @PutMapping
+    public Result<String> addUser(@RequestBody @Valid AddUmsMemberRequest request, BindingResult result){
+        if(result.hasErrors()){
+            for(ObjectError error : result.getAllErrors()){
+                return Result.<String>builder().error("500").msg(error.getDefaultMessage()).build();
+            }
+        }
+        return umsMemberService.addUser(request);
+
     }
 
 }

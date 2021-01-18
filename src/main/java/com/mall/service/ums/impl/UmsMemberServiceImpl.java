@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.entity.ums.UmsMember;
 import com.mall.mapper.ums.UmsMemberMapper;
 import com.mall.service.ums.IUmsMemberService;
+import com.mall.vo.request.ums.AddUmsMemberRequest;
 import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
@@ -36,6 +37,11 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request) {
         Page<UmsMember> page = new Page<>(request.getPageNum(), request.getPageSize());
         Page<UmsMember> memberPage = umsMemberMapper.selectPage(page, null);
+        return null;
+    }
+
+    @Override
+    public Result<String> addUser(AddUmsMemberRequest request) {
         return null;
     }
 }

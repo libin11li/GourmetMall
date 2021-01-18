@@ -1,6 +1,7 @@
 package com.mall.service.ums;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.mall.vo.request.ums.AddUmsMemberRequest;
 import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
@@ -25,5 +26,12 @@ public interface IUmsMemberService {
      * @return 用户列表
      */
     Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request);
+
+    /**
+     * 新增用户
+     * @param request 用户信息
+     * @return 新增结果
+     */
+    Result<String> addUser(AddUmsMemberRequest request);
 
 }

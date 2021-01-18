@@ -7,6 +7,8 @@ MyBatisPlus枚举持久化到数据库,MyBatisPlus多表联合查询分页,MyBat
 
 完善spu,sku,order相关表和代码
 
+商品增删改查同步ES
+
 订单号使用雪花算法生成
 
 整合RabbitMQ定时取消订单
