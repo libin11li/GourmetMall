@@ -3,13 +3,15 @@ package com.mall.vo.response.ums;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author li
  * description:
  * date: 2021/1/6
  */
 @Data
-public class UmsMemberInfoResponse {
+public class UmsMemberInfoResponse implements Serializable {
 
     @ApiModelProperty("id")
     private Long id;

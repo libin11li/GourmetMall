@@ -1,6 +1,7 @@
 package com.mall.service.ums.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.entity.ums.UmsMember;
 import com.mall.mapper.ums.UmsMemberMapper;
 import com.mall.service.ums.IUmsMemberService;
@@ -8,6 +9,7 @@ import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,8 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 
     @Override
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request) {
+        Page<UmsMember> page = new Page<>(request.getPageNum(), request.getPageSize());
+        Page<UmsMember> memberPage = umsMemberMapper.selectPage(page, null);
         return null;
     }
 }

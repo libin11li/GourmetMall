@@ -33,7 +33,6 @@ public class UmsMemberController {
 
     @GetMapping
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request){
-        Page<UmsMemberInfoResponse> page = new Page<>(request.getPageNum(), request.getPageSize());
         return umsMemberService.getUmsMemberList(request);
     }
 
