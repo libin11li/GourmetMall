@@ -11,18 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author li
- * description:
+ * description:统一异常捕获器
  * date: 2021/1/6
  */
 @RestControllerAdvice
 public class ExceptionHandle {
 
-
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public Result<String> jsonParseError(HttpServletRequest request, Throwable ex) {
+    public Result<String> jsonParseError(HttpServletRequest request) {
         return Result.<String>builder().error(getStatus(request).value()).msg("JSON格式错误，无法解析对象").build();
     }
 
+    /**
+     * 自定义业务异常
+     */
     @ExceptionHandler(NormalException.class)
     public Result<String> normalError(HttpServletRequest request, Throwable ex) {
         return Result.<String>builder().error(getStatus(request).value()).msg(ex.getMessage()).build();
