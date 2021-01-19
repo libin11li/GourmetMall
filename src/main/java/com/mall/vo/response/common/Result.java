@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class Result<T>{
 
-    private String code;
+    private Integer code;
 
     private String msg;
 
@@ -29,7 +29,7 @@ public class Result<T>{
     @Data
     public static class Builder<T>{
 
-        private String code;
+        private Integer code;
 
         private String msg;
 
@@ -43,7 +43,7 @@ public class Result<T>{
             return this;
         }
 
-        public Builder<T> error(String code){
+        public Builder<T> error(Integer code){
             this.code = code;
             return this;
         }

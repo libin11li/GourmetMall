@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * description:性别枚举
  * date: 2021/1/6
  */
-public enum SexEnums {
+public enum SexEnum {
 
     BOY(0, "男"),
     GIRL(1, "女");
@@ -22,7 +22,7 @@ public enum SexEnums {
 
     private final String desc;
 
-    SexEnums(int code, String desc){
+    SexEnum(int code, String desc){
         this.code = code;
         this.desc = desc;
     }

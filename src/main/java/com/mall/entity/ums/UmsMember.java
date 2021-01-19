@@ -1,5 +1,6 @@
 package com.mall.entity.ums;
 
+import com.mall.enums.ums.SexEnum;
 import lombok.Data;
 
 /**
@@ -29,5 +30,10 @@ public class UmsMember {
      * 邮箱
      */
     private String email;
+
+    /**
+     * 性别
+     */
+    private SexEnum sex;
 
 }

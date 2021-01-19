@@ -1,5 +1,6 @@
 package com.mall.vo.request.ums;
 
+import com.mall.enums.ums.SexEnum;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -27,5 +28,10 @@ public class AddUmsMemberRequest {
      * 邮箱
      */
     private String email;
+
+    /**
+     * 性别
+     */
+    private SexEnum sex;
 
 }

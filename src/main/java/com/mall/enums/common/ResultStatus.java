@@ -11,19 +11,19 @@ import lombok.Getter;
 public enum ResultStatus {
 
     //业务成功
-    SUCCESS("0", "SUCCESS");
+    SUCCESS(0, "SUCCESS");
 
     /**
      * 业务code
      */
-    private final String code;
+    private final Integer code;
 
     /**
      * 业务code对应的信息
      */
     private final String msg;
 
-    ResultStatus(String code, String msg){
+    ResultStatus(Integer code, String msg){
         this.code = code;
         this.msg = msg;
     }

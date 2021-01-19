@@ -42,7 +42,7 @@ public class UmsMemberController {
     public Result<String> addUser(@RequestBody @Valid AddUmsMemberRequest request, BindingResult result){
         if(result.hasErrors()){
             for(ObjectError error : result.getAllErrors()){
-                return Result.<String>builder().error("500").msg(error.getDefaultMessage()).build();
+                return Result.<String>builder().error(500).msg(error.getDefaultMessage()).build();
             }
         }
         return umsMemberService.addUser(request);

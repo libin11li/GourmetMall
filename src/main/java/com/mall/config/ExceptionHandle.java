@@ -20,18 +20,18 @@ public class ExceptionHandle {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public Result<String> jsonParseError(HttpServletRequest request, Throwable ex) {
-        return Result.<String>builder().error(String.valueOf(getStatus(request).value())).msg("JSON格式错误，无法解析对象").build();
+        return Result.<String>builder().error(getStatus(request).value()).msg("JSON格式错误，无法解析对象").build();
     }
 
     @ExceptionHandler(NormalException.class)
     public Result<String> normalError(HttpServletRequest request, Throwable ex) {
-        return Result.<String>builder().error(String.valueOf(getStatus(request).value())).msg(ex.getMessage()).build();
+        return Result.<String>builder().error(getStatus(request).value()).msg(ex.getMessage()).build();
     }
 
     @ExceptionHandler(Exception.class)
     public Result<String> allExceptionError(HttpServletRequest request, Throwable ex) {
         ex.printStackTrace();
-        return Result.<String>builder().error(String.valueOf(getStatus(request).value())).msg(ex.getMessage()).build();
+        return Result.<String>builder().error(getStatus(request).value()).msg(ex.getMessage()).build();
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {
