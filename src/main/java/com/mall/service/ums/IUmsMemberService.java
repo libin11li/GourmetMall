@@ -6,6 +6,8 @@ import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 
+import java.util.List;
+
 /**
  * @author li
  * description:
@@ -33,5 +35,12 @@ public interface IUmsMemberService {
      * @return 新增结果
      */
     Result<String> addUser(AddUmsMemberRequest request);
+
+    /**
+     * 批量新增用户
+     * @param request 用户信息
+     * @return 新增结果
+     */
+    Result<String> addUserBatch(List<AddUmsMemberRequest> request);
 
 }

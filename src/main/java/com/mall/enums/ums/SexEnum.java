@@ -11,8 +11,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum SexEnum {
 
-    BOY(0, "男"),
-    GIRL(1, "女");
+    /**
+     * 男性
+     */
+    BOY(0),
+    /**
+     * 女性
+     */
+    GIRL(1);
 
     /**
      * 写入数据库的字段
@@ -20,11 +26,9 @@ public enum SexEnum {
     @EnumValue
     private final Integer code;
 
-    private final String desc;
 
-    SexEnum(int code, String desc){
+    SexEnum(int code){
         this.code = code;
-        this.desc = desc;
     }
 
     /**
@@ -34,10 +38,6 @@ public enum SexEnum {
     @JsonValue
     public Integer getCode(){
         return this.code;
-    }
-
-    public String getDesc(){
-        return this.getDesc();
     }
 
 }

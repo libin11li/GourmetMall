@@ -1,5 +1,6 @@
 package com.mall.vo.response.common;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mall.enums.common.ResultStatus;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ import lombok.Data;
  * date: 2021/1/5
  */
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T>{
 
     private Integer code;

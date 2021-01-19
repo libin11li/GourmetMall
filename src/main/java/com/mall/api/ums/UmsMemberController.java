@@ -8,12 +8,14 @@ import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @author li
@@ -29,16 +31,19 @@ public class UmsMemberController {
     private final IUmsMemberService umsMemberService;
 
     @GetMapping("/{id}")
+    @ApiOperation("获取用户详情")
     public Result<UmsMemberInfoResponse> getUmsMemberDetail(@PathVariable("id") Long id){
         return umsMemberService.detail(id);
     }
 
     @GetMapping
+    @ApiOperation("获取用户列表")
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request){
         return umsMemberService.getUmsMemberList(request);
     }
 
     @PutMapping
+    @ApiOperation("新增用户")
     public Result<String> addUser(@RequestBody @Valid AddUmsMemberRequest request, BindingResult result){
         if(result.hasErrors()){
             for(ObjectError error : result.getAllErrors()){
@@ -46,7 +51,17 @@ public class UmsMemberController {
             }
         }
         return umsMemberService.addUser(request);
+    }
 
+    @PutMapping("/batch")
+    @ApiOperation("批量新增用户")
+    public Result<String> addUser(@RequestBody @Valid List<AddUmsMemberRequest> request, BindingResult result){
+        if(result.hasErrors()){
+            for(ObjectError error : result.getAllErrors()){
+                return Result.<String>builder().error(500).msg(error.getDefaultMessage()).build();
+            }
+        }
+        return umsMemberService.addUserBatch(request);
     }
 
 }
