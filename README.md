@@ -1,5 +1,5 @@
 
-MyBatisPlus枚举持久化到数据库,MyBatisPlus多表联合查询分页,MyBatisPlus批量新增,MyBatisPlus批量更新
+~~MyBatisPlus枚举持久化到数据库,MyBatisPlus分页查询,MyBatisPlus批量新增,MyBatisPlus批量更新~~
 
 完善用户表,整合SpringSecurity权限认证,集成到redis
 
