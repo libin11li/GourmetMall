@@ -24,7 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequiredArgsConstructor
-@Api(value = "UmsMemberController", tags = {"用户管理"})
+@Api(value = "UmsMemberController", tags = {"用户"})
 @RequestMapping("/ums")
 public class UmsMemberController {
 

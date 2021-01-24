@@ -1,17 +1,19 @@
 
 ~~MyBatisPlus枚举持久化到数据库,MyBatisPlus分页查询,MyBatisPlus批量新增,MyBatisPlus批量更新~~
 
-完善用户表,整合SpringSecurity权限认证,集成到redis
+完善spu,sku
 
-整合SpringSecurityOAuth2
-
-完善spu,sku,order相关表和代码
+order相关表和代码
 
 商品增删改查同步ES
 
 订单号使用雪花算法生成
 
 整合RabbitMQ定时取消订单
+
+完善用户表,整合SpringSecurity权限认证,集成到redis
+
+整合SpringSecurityOAuth2
 
 分库分表
 

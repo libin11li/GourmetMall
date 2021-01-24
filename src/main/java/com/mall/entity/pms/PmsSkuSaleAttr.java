@@ -1,22 +1,21 @@
-package com.mall.entity.ums;
+package com.mall.entity.pms;
 
-import com.baomidou.mybatisplus.annotation.EnumValue;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.mall.enums.ums.SexEnum;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @author li
  * description:
- * date: 2021/1/5
+ * date: 2021-01-25
  */
 @Data
-@TableName(value = "ums_member")
-public class UmsMember implements Serializable {
+@TableName(value = "pms_sku_sale_attr")
+public class PmsSkuSaleAttr implements Serializable {
 
     /**
      * id
@@ -25,24 +24,23 @@ public class UmsMember implements Serializable {
     private Long id;
 
     /**
-     * 昵称
+     * 商品id
      */
-    private String name;
+    private Long spuId;
 
     /**
-     * 年龄
+     * skuId
      */
-    private Integer age;
+    private Long skuId;
 
     /**
-     * 邮箱
+     * 销售属性名称
      */
-    private String email;
+    private String attrName;
 
     /**
-     * 性别
+     * 销售属性值
      */
-    @EnumValue
-    private SexEnum sex;
+    private String attrValue;
 
 }
