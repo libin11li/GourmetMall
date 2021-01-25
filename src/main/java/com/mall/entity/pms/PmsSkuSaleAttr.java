@@ -43,4 +43,9 @@ public class PmsSkuSaleAttr implements Serializable {
      */
     private String attrValue;
 
+    public PmsSkuSaleAttr(Long skuId, String attrName, String attrValue) {
+        this.skuId = skuId;
+        this.attrName = attrName;
+        this.attrValue = attrValue;
+    }
 }

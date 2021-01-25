@@ -7,7 +7,7 @@ package com.mall.exception;
  */
 public class NormalException extends RuntimeException {
 
-    NormalException(String message){
+    public NormalException(String message){
         super(message);
     }
 

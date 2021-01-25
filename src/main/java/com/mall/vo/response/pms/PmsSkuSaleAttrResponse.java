@@ -15,27 +15,15 @@ import java.util.List;
 public class PmsSkuSaleAttrResponse {
 
     /**
-     * id
-     */
-    @ApiModelProperty("id")
-    private Long id;
-
-    /**
-     * skuId
-     */
-    @ApiModelProperty("skuId列表")
-    private List<Long> skuId;
-
-    /**
      * 销售属性名称
      */
     @ApiModelProperty("销售属性名称")
     private String attrName;
 
     /**
-     * 销售属性值
+     * 销售属性值-sku列表
      */
-    @ApiModelProperty("销售属性值")
-    private String attrValue;
+    @ApiModelProperty("销售属性值-sku列表")
+    private List<PmsSkuSaleAttrValueResponse> attrValues;
 
 }

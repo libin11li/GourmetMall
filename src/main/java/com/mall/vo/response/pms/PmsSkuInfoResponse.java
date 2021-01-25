@@ -16,7 +16,7 @@ public class PmsSkuInfoResponse {
     /**
      * id
      */
-    @ApiModelProperty("SkuId")
+    @ApiModelProperty("skuId")
     private Long id;
 
     /**

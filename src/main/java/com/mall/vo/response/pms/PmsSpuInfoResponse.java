@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author li
@@ -44,5 +45,11 @@ public class PmsSpuInfoResponse {
      */
     @ApiModelProperty("价格")
     private BigDecimal price;
+
+    @ApiModelProperty("sku列表")
+    private List<PmsSkuInfoResponse> skuInfos;
+
+    @ApiModelProperty("sku-销售属性列表")
+    private List<PmsSkuSaleAttrResponse> saleAttrs;
 
 }
