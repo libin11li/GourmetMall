@@ -26,7 +26,7 @@ public class PmsSpuController {
 
     @GetMapping("/{id}")
     @ApiOperation("获取商品详情")
-    public Result<PmsSpuInfoResponse> detail(@PathVariable("id") Long id){
+    public Result<PmsSpuInfoResponse> detail(@PathVariable("id") Long id) {
         return pmsService.detail(id);
     }
 

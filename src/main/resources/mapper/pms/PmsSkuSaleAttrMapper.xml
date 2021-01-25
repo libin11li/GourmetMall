@@ -6,8 +6,8 @@
 
     <select id="selectGroupList" parameterType="long" resultType="com.mall.dto.pms.SelectSkuSaleAttrDTO">
         select attr_name, attr_value, group_concat(sku_id) as sku_ids from pms_sku_sale_attr
-        group by attr_name,attr_value
         where spu_id = #{spuId}
+        group by attr_name,attr_value
     </select>
 
 </mapper>

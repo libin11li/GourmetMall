@@ -1,22 +1,26 @@
 
 ~~MyBatisPlus枚举持久化到数据库,MyBatisPlus分页查询,MyBatisPlus批量新增,MyBatisPlus批量更新~~
 
-完善spu,sku
+~~完善spu,sku~~
 
+2021-01-26
 order相关表和代码
-
 商品增删改查同步ES
-
 订单号使用雪花算法生成
 
+2021-01-27
 整合RabbitMQ定时取消订单
 
+2021-01-28
 完善用户表,整合SpringSecurity权限认证,集成到redis
 
+2021-01-29
 整合SpringSecurityOAuth2
 
+2021-01-30
 分库分表
 
+2021-01-31
 分布式事务
 
 redis数据结构,持久化,过期策略,线程和事务,主从,哨兵,集群
