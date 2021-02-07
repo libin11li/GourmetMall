@@ -30,6 +30,7 @@ mybatis-plus:
   type-enums-package: com.mall.enums
   configuration:
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
   global-config:
     db-config:
       id-type: auto
