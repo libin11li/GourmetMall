@@ -20,4 +20,9 @@ public class SnowProperties {
      */
     private String[] localIps;
 
+    /**
+     * 工作中心id
+     */
+    private Long workerId;
+
 }
