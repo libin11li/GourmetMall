@@ -5,12 +5,14 @@ spring:
     datasource:
       names: master,slave
       master: # 配置主库
-        url: jdbc:mysql://180.163.89.244:13306/gourmet_mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&useSSL=false&allowPublicKeyRetrieval=true&verifyServerCertificate=false
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbcUrl: jdbc:mysql://180.163.89.244:13306/gourment?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&useSSL=false&allowPublicKeyRetrieval=true&verifyServerCertificate=false
         username: root
         password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver
       slave: # 配置第一个从库
-        url: jdbc:mysql://180.163.89.244:13308/gourmet_mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&useSSL=false&allowPublicKeyRetrieval=true&verifyServerCertificate=false
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbcUrl: jdbc:mysql://180.163.89.244:13308/gourment?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&useSSL=false&allowPublicKeyRetrieval=true&verifyServerCertificate=false
         username: libin
         password: 123456
         driver-class-name: com.mysql.cj.jdbc.Driver

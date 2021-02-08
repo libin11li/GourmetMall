@@ -2,6 +2,7 @@ package com.mall.service.pms.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.google.common.collect.Lists;
+import com.mall.dto.es.EsCommonIndex;
 import com.mall.dto.pms.SelectSkuSaleAttrDTO;
 import com.mall.entity.pms.PmsSkuInfo;
 import com.mall.entity.pms.PmsSkuSaleAttr;
@@ -11,6 +12,7 @@ import com.mall.mapper.pms.PmsSkuInfoMapper;
 import com.mall.mapper.pms.PmsSkuSaleAttrMapper;
 import com.mall.mapper.pms.PmsSpuInfoMapper;
 import com.mall.service.pms.IPmsSpuService;
+import com.mall.utils.EsUtils;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.pms.PmsSkuInfoResponse;
 import com.mall.vo.response.pms.PmsSkuSaleAttrResponse;
@@ -35,6 +37,7 @@ public class PmsSpuServiceImpl implements IPmsSpuService {
     private final PmsSpuInfoMapper spuInfoMapper;
     private final PmsSkuInfoMapper skuInfoMapper;
     private final PmsSkuSaleAttrMapper skuSaleAttrMapper;
+    private final EsUtils esUtils;
 
     @Override
     public Result<PmsSpuInfoResponse> detail(Long id) {

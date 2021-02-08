@@ -1,6 +1,7 @@
 package com.mall.api.pms;
 
 import com.mall.service.pms.IPmsSpuService;
+import com.mall.utils.EsUtils;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.pms.PmsSpuInfoResponse;
 import io.swagger.annotations.Api;

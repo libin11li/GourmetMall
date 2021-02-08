@@ -11,6 +11,8 @@ import com.mall.vo.request.ums.SearchUmsMemberRequest;
 import com.mall.vo.response.common.Result;
 import com.mall.vo.response.ums.UmsMemberInfoResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.shardingsphere.api.hint.HintManager;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,7 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UmsMemberServiceImpl implements IUmsMemberService {
 
     private final UmsMemberMapper umsMemberMapper;
@@ -37,6 +40,9 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 
     @Override
     public Result<IPage<UmsMemberInfoResponse>> getUmsMemberList(SearchUmsMemberRequest request) {
+        //强制该次连接读主库
+        HintManager hintManager = HintManager.getInstance();
+        hintManager.setMasterRouteOnly();
         Page<UmsMember> page = new Page<>(request.getPageNum(), request.getPageSize());
         Page<UmsMember> memberPage = umsMemberMapper.selectPage(page, null);
         List<UmsMemberInfoResponse> umsMemberInfoResponses = Lists.newArrayList();
@@ -54,6 +60,7 @@ public class UmsMemberServiceImpl implements IUmsMemberService {
 
     @Override
     public Result<String> addUser(AddUmsMemberRequest request) {
+        log.info("新增用户");
         UmsMember umsMember = new UmsMember();
         BeanUtils.copyProperties(request, umsMember);
         umsMemberMapper.insert(umsMember);
