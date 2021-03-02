@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 public interface PmsClient {
 
+    /**
+     * 测试方法
+     * @return 结果
+     */
     @GetMapping("/base/test")
     String test();
 
